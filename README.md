@@ -20,6 +20,14 @@ https://github.com/dotnet/aspire
 
 ## 2. Create an Aspire Empty application
 
+![image](https://github.com/user-attachments/assets/df18c938-db3c-4d88-809e-8fb4c4e4662a)
+
+![image](https://github.com/user-attachments/assets/be370fd2-373e-4770-9a51-dc7e297a7f1f)
+
+We can see now the solution folders structure
+
+![image](https://github.com/user-attachments/assets/a4f32b71-9be2-48e0-b259-d68f4ba2efbe)
+
 Add Nuget Package **Aspire.Hosting.Kafka** in the **AppHost** project
 
 **Aspire.Hosting.Kafka** library provides extension methods and resource definitions for a .NET Aspire AppHost to configure a **Kafka** resource.
