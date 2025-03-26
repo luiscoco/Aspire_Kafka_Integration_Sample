@@ -30,6 +30,8 @@ We can see now the solution folders structure
 
 Add Nuget Package **Aspire.Hosting.Kafka** in the **AppHost** project
 
+![image](https://github.com/user-attachments/assets/cac3ef21-e576-4317-a58b-5edb344cdeb8)
+
 **Aspire.Hosting.Kafka** library provides extension methods and resource definitions for a .NET Aspire AppHost to configure a **Kafka** resource.
 
 The Nuget Package **Aspire.Hosting.Kafka** (loaded in the **AppHost** project) creates **Kafka** and **KafkaUI** images according to this data
@@ -48,6 +50,8 @@ https://github.com/dotnet/aspire/tree/main/src/Aspire.Hosting.Kafka
 
 Load Nuget Library **Aspire.Confluent.Kafka**
 
+![image](https://github.com/user-attachments/assets/848698ec-22ba-4239-b331-b765b962ef92)
+
 For a detailed information about **Aspire.Confluent.Kafka** visit the official github repo
 
 https://github.com/dotnet/aspire/tree/main/src/Components/Aspire.Confluent.Kafka
@@ -64,6 +68,8 @@ Add **ServiceDefaults** project reference
 ![image](https://github.com/user-attachments/assets/ce52bf21-286d-4a18-b48b-db9453c4d6ea)
 
 Load Nuget Library **Aspire.Confluent.Kafka**
+
+![image](https://github.com/user-attachments/assets/0fdf2234-3701-46a8-882a-d276220beff4)
 
 For a detailed information about **Aspire.Confluent.Kafka** visit the official github repo
 
@@ -215,10 +221,107 @@ internal sealed class IntermittentProducerWorker(IProducer<string, string> produ
 
 ## 7. Input "Consumer" project source code
 
-```csharp
+![image](https://github.com/user-attachments/assets/7cb2d991-9b63-4195-967d-882988acf304)
 
+**appsettings.json**
+
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.Hosting.Lifetime": "Information",
+      "Azure": "Warning"
+    }
+  },
+  "Aspire": {
+    "Confluent": {
+      "Kafka": {
+        "Consumer": {
+          "Config": {
+            "AutoOffsetReset": "Earliest",
+            "GroupId": "aspire"
+          }
+        }
+      }
+    }
+  }
+}
 ```
 
+**program.cs**
+
+```csharp
+// See https://// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using Confluent.Kafka;
+using Consumer;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+var builder = Host.CreateApplicationBuilder(args);
+
+builder.AddServiceDefaults();
+
+builder.AddKafkaConsumer<Ignore, string>("kafka", settings =>
+{
+    settings.Config.GroupId = "aspire";
+    settings.Config.AutoOffsetReset = AutoOffsetReset.Earliest;
+});
+
+builder.Services.AddHostedService<ConsumerWorker>();
+
+builder.Build().Run();
+```
+
+**ConsumerWorker.cs**
+
+```csharp
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using Confluent.Kafka;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+
+namespace Consumer;
+
+internal sealed class ConsumerWorker(IConsumer<Ignore, string> consumer, ILogger<ConsumerWorker> logger) : BackgroundService
+{
+    protected override Task ExecuteAsync(CancellationToken stoppingToken)
+    {
+        long i = 0;
+        return Task.Factory.StartNew(async () =>
+        {
+            consumer.Subscribe("demo-topic");
+            while (!stoppingToken.IsCancellationRequested)
+            {
+                ConsumeResult<Ignore, string>? result = default;
+                try
+                {
+                    result = consumer.Consume(TimeSpan.FromSeconds(1));
+                    if (result is not null)
+                    {
+                        logger.LogInformation($"Consumed message [{result.Message?.Key}] = {result.Message?.Value}");
+                    }
+                }
+                catch (ConsumeException ex) when (ex.Error.Code == ErrorCode.UnknownTopicOrPart)
+                {
+                    await Task.Delay(100);
+                    continue;
+                }
+
+                i++;
+                if (i % 1000 == 0)
+                {
+                    logger.LogInformation($"Received {i} messages. current offset is '{result!.Offset}'");
+                }
+            }
+        }, stoppingToken, TaskCreationOptions.LongRunning, TaskScheduler.Current);
+    }
+}
+```
 ## 8. Run the Application and verify the results
 
 
