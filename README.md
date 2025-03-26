@@ -64,15 +64,17 @@ Load Nuget Library **Aspire.Confluent.Kafka**
 
 ![image](https://github.com/user-attachments/assets/848698ec-22ba-4239-b331-b765b962ef92)
 
+Add **.NET Aspire Orchestrator** Support
+
+Add **ServiceDefaults** project reference
+
+**Important note**:
+
 For a detailed information about **Aspire.Confluent.Kafka** visit the official github repo
 
 https://github.com/dotnet/aspire/tree/main/src/Components/Aspire.Confluent.Kafka
 
 ![image](https://github.com/user-attachments/assets/6fa9f559-c9ce-4657-9336-c3ebdd62e83b)
-
-Add **.NET Aspire Orchestrator** Support
-
-Add **ServiceDefaults** project reference
 
 ## 4. Add a Console C# Application (Consumer)
 
@@ -82,13 +84,15 @@ Load Nuget Library **Aspire.Confluent.Kafka**
 
 ![image](https://github.com/user-attachments/assets/0fdf2234-3701-46a8-882a-d276220beff4)
 
-For a detailed information about **Aspire.Confluent.Kafka** visit the official github repo
-
-https://github.com/dotnet/aspire/tree/main/src/Components/Aspire.Confluent.Kafka
-
 Add **.NET Aspire Orchestrator Support**
 
 Add **ServiceDefaults** project reference
+
+**Important note**:
+
+For a detailed information about **Aspire.Confluent.Kafka** visit the official github repo
+
+https://github.com/dotnet/aspire/tree/main/src/Components/Aspire.Confluent.Kafka
 
 ## 5. Configure AppHost project middleware(Program.cs)
 
@@ -108,7 +112,6 @@ builder.AddProject<Projects.Consumer>("consumer")
 
 builder.Build().Run();
 ```
-
 
 ## 6. Input "Producer" project source code 
 
