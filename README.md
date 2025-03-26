@@ -20,11 +20,11 @@ https://github.com/dotnet/aspire
 
 ## 2. Create an Aspire Empty application
 
-Load Nuget Libraries
+Add Nuget Package **Aspire.Hosting.Kafka** in the **AppHost** project
 
-Nuget Package **Aspire.Hosting.Kafka** in the **AppHost** project
+**Aspire.Hosting.Kafka** library provides extension methods and resource definitions for a .NET Aspire AppHost to configure a **Kafka** resource.
 
-The Nuget Package **Aspire.Hosting.Kafka** (loaded in the AppHost project) creates Kafka and KafkaUI images according to this data
+The Nuget Package **Aspire.Hosting.Kafka** (loaded in the **AppHost** project) creates **Kafka** and **KafkaUI** images according to this data
 
 ![image](https://github.com/user-attachments/assets/029cbed5-94ef-4d6c-8dea-a0e871e6de36)
 
