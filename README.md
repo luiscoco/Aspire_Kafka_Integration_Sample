@@ -26,6 +26,10 @@ https://visualstudio.microsoft.com/downloads/
 
 ### 1.3. Install and run Docker Desktop for Windows
 
+https://docs.docker.com/desktop/setup/install/windows-install/
+
+![image](https://github.com/user-attachments/assets/378793f9-3705-4ca0-8761-0f546f258031)
+
 ## 2. Create an Aspire Empty application
 
 ![image](https://github.com/user-attachments/assets/df18c938-db3c-4d88-809e-8fb4c4e4662a)
@@ -69,7 +73,6 @@ https://github.com/dotnet/aspire/tree/main/src/Components/Aspire.Confluent.Kafka
 Add **.NET Aspire Orchestrator** Support
 
 Add **ServiceDefaults** project reference
-
 
 ## 4. Add a Console C# Application (Consumer)
 
