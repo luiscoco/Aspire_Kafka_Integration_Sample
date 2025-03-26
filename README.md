@@ -22,6 +22,12 @@ https://github.com/dotnet/aspire
 
 Load Nuget Libraries
 
+Nuget Package **Aspire.Hosting.Kafka** in the **AppHost** project
+
+The Nuget Package **Aspire.Hosting.Kafka** (loaded in the AppHost project) creates Kafka and KafkaUI images according to this data
+
+![image](https://github.com/user-attachments/assets/029cbed5-94ef-4d6c-8dea-a0e871e6de36)
+
 ## 3. Add a Console C# Application (Producer)
 
 Load Nuget Libraries
