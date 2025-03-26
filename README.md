@@ -36,20 +36,32 @@ https://github.com/dotnet/aspire/tree/main/src/Aspire.Hosting.Kafka
 
 ## 3. Add a Console C# Application (Producer)
 
-Load Nuget Libraries
+Load Nuget Library **Aspire.Confluent.Kafka**
 
-Add .NET Aspire Orchestrator Support
+For a detailed information about **Aspire.Confluent.Kafka** visit the official github repo
 
-Add ServiceDefaults project reference
+https://github.com/dotnet/aspire/tree/main/src/Components/Aspire.Confluent.Kafka
+
+![image](https://github.com/user-attachments/assets/6fa9f559-c9ce-4657-9336-c3ebdd62e83b)
+
+Add **.NET Aspire Orchestrator** Support
+
+Add **ServiceDefaults** project reference
 
 
 ## 4. Add a Console C# Application (Producer)
 
-Load Nuget Libraries
+Load Nuget Library **Aspire.Confluent.Kafka**
 
-Add .NET Aspire Orchestrator Support
+For a detailed information about **Aspire.Confluent.Kafka** visit the official github repo
 
-Add ServiceDefaults project reference
+https://github.com/dotnet/aspire/tree/main/src/Components/Aspire.Confluent.Kafka
+
+![image](https://github.com/user-attachments/assets/6fa9f559-c9ce-4657-9336-c3ebdd62e83b)
+
+Add **.NET Aspire Orchestrator Support**
+
+Add **ServiceDefaults** project reference
 
 ## 5. Configure AppHost project middleware(Program.cs)
 
