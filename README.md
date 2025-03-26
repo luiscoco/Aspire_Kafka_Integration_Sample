@@ -28,6 +28,12 @@ The Nuget Package **Aspire.Hosting.Kafka** (loaded in the AppHost project) creat
 
 ![image](https://github.com/user-attachments/assets/029cbed5-94ef-4d6c-8dea-a0e871e6de36)
 
+For more detailed explanation about the Nuget package **Aspire.Hosting.Kafka** visit the Aspire official github repo
+
+https://github.com/dotnet/aspire/tree/main/src/Aspire.Hosting.Kafka
+
+![image](https://github.com/user-attachments/assets/a8e1f270-0427-4deb-8ae5-d88df1ae4162)
+
 ## 3. Add a Console C# Application (Producer)
 
 Load Nuget Libraries
