@@ -376,3 +376,25 @@ Or we can select the **Producer** application console output
 
 ![image](https://github.com/user-attachments/assets/1459aeba-7028-47ed-9eff-46e2f9346372)
 
+We also can navigate to the **kafkaUI**
+
+![image](https://github.com/user-attachments/assets/0d8ae654-5f34-4900-9e27-db2bdecea641)
+
+We can verify the kafka information
+
+![image](https://github.com/user-attachments/assets/f87d8dd8-2736-437e-abad-f1117a9b459e)
+
+We can visit the **kafka Brokers** information and configuration
+
+![image](https://github.com/user-attachments/assets/7cb4019e-e7c6-4f85-8479-6bca5e722120)
+
+![image](https://github.com/user-attachments/assets/252090d4-e864-420e-9e90-25cc877b96a3)
+
+We verify the **kafka topics**
+
+![image](https://github.com/user-attachments/assets/1780f899-c561-4355-9be1-3151b586826c)
+
+We also see the **kafka consumers**
+
+![image](https://github.com/user-attachments/assets/5191c836-6b1a-41c6-91d2-b79d408b11e0)
+
