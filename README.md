@@ -44,6 +44,8 @@ https://github.com/dotnet/aspire/tree/main/src/Aspire.Hosting.Kafka
 
 ## 3. Add a Console C# Application (Producer)
 
+![image](https://github.com/user-attachments/assets/ca3c7022-a891-4347-904f-407da0e7d682)
+
 Load Nuget Library **Aspire.Confluent.Kafka**
 
 For a detailed information about **Aspire.Confluent.Kafka** visit the official github repo
@@ -57,7 +59,9 @@ Add **.NET Aspire Orchestrator** Support
 Add **ServiceDefaults** project reference
 
 
-## 4. Add a Console C# Application (Producer)
+## 4. Add a Console C# Application (Consumer)
+
+![image](https://github.com/user-attachments/assets/ce52bf21-286d-4a18-b48b-db9453c4d6ea)
 
 Load Nuget Library **Aspire.Confluent.Kafka**
 
@@ -71,12 +75,86 @@ Add **ServiceDefaults** project reference
 
 ## 5. Configure AppHost project middleware(Program.cs)
 
+```csharp
+var builder = DistributedApplication.CreateBuilder(args);
 
-## 6. Input Producer project source code 
+var kafka = builder.AddKafka("kafka")
+    .WithKafkaUI(kafkaUi => kafkaUi.WithHostPort(8080));
+
+builder.AddProject<Projects.Producer>("producer")
+    .WithReference(kafka).WaitFor(kafka)
+    .WithArgs(kafka.Resource.Name);
+
+builder.AddProject<Projects.Consumer>("consumer")
+    .WithReference(kafka).WaitFor(kafka)
+    .WithArgs(kafka.Resource.Name);
+
+builder.Build().Run();
+```
 
 
-## 7. Input Consumer project source code
+## 6. Input "Producer" project source code 
 
+![image](https://github.com/user-attachments/assets/22392ab2-7bd2-4594-9fff-ae7d6c5d604b)
+
+**appsettings.json**
+
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.Hosting.Lifetime": "Information",
+      "Azure": "Warning"
+    }
+  },
+  "Aspire": {
+    "Confluent": {
+      "Kafka": {
+        "Producer": {
+          "Config": {
+            "Acks": "All"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Important note**: for more information about the configuration options, see the **ConfigurationSchemal.json** file content 
+
+This file is inside the offical Aspire github repo in the folder **Components** and project **Aspire.Confluent.Kafka**
+
+![image](https://github.com/user-attachments/assets/c49173c3-0588-4b2f-baeb-10414fb1ba80)
+
+**Program.cs(Producer middleware)**
+
+```csharp
+using Confluent.Kafka;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Producer;
+
+var builder = Host.CreateApplicationBuilder(args);
+
+builder.AddServiceDefaults();
+builder.AddKafkaProducer<string, string>("kafka");
+builder.AddKafkaProducer<Null, string>("kafka");
+
+builder.Services.AddHostedService<IntermittentProducerWorker>();
+builder.Services.AddHostedService<ContinuousProducerWorker>();
+
+builder.Build().Run();
+```
+
+
+
+## 7. Input "Consumer" project source code
+
+```csharp
+
+```
 
 ## 8. Run the Application and verify the results
 
