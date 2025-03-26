@@ -324,7 +324,55 @@ internal sealed class ConsumerWorker(IConsumer<Ignore, string> consumer, ILogger
 ```
 ## 8. Run the Application and verify the results
 
+Before running the application we have to run **Docker Desktop**
 
+![image](https://github.com/user-attachments/assets/b875eaed-09f7-4ba9-9582-3a13744f746c)
 
+We set **AppHost** project as the **StartUp project**
 
+![image](https://github.com/user-attachments/assets/f5c5cb44-0e88-4f21-b069-45241632efd3)
+
+We run the application and automatically opens the **Aspire Dashboard**
+
+We have to wait for some time until the Kafka and KafkaUI docker images are download and after the docker containers are run
+
+![image](https://github.com/user-attachments/assets/e1901f73-ad55-48ae-8638-7d2698931a44)
+
+We check in Docker Desktop the images were successfully downloaded
+
+![image](https://github.com/user-attachments/assets/505f9352-4af2-48ff-93b8-822ceded6192)
+
+also you can execute this command to see the docker images
+
+```
+docker images
+```
+
+![image](https://github.com/user-attachments/assets/6dc78cae-d7ae-4c4a-9ccf-3c1511e55d8c)
+
+We can also verify in Docker Desktop the containers are running
+
+![image](https://github.com/user-attachments/assets/4710a141-d484-4dcf-9206-5c57dfe65ca9)
+
+also you can execute this command to see the running docker container
+
+```
+docker ps
+```
+
+![image](https://github.com/user-attachments/assets/dc23b2a9-e010-4258-9f88-8ebaa5324b95)
+
+After some time we confirm all the applications and container are running properly
+
+![image](https://github.com/user-attachments/assets/88f84577-55c2-4d23-878f-550f533873db)
+
+Now we click on the **Console** icon in the left hand side menu
+
+We can select the **Consumer** application console output
+
+![image](https://github.com/user-attachments/assets/582b6a5f-562d-4411-a7cf-52a9bbb088f6)
+
+Or we can select the **Producer** application console output
+
+![image](https://github.com/user-attachments/assets/1459aeba-7028-47ed-9eff-46e2f9346372)
 
