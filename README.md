@@ -4,6 +4,10 @@
 
 The .NET Aspire Apache Kafka integration enables you to connect to existing Kafka instances, or create new instances from .NET with the docker.io/confluentinc/confluent-local container image
 
+https://hub.docker.com/r/confluentinc/cp-kafka
+
+![image](https://github.com/user-attachments/assets/076d83a4-5842-49bc-b6a0-0bb3806dda74)
+
 For more information about this post visit the official web site:
 
 https://learn.microsoft.com/en-us/dotnet/aspire/messaging/kafka-integration?tabs=dotnet-cli
