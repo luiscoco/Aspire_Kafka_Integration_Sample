@@ -14,7 +14,15 @@ https://github.com/dotnet/aspire
 
 ### 1.1. Install .NET 9
 
-### 1.2. Install Visual Studio 2022 v17.3
+Visit this web site (https://dotnet.microsoft.com/es-es/download/dotnet/9.0) and download **Windows x64 SDK 9.0.202**
+
+![image](https://github.com/user-attachments/assets/87e72641-7c88-4839-9bdb-91f64568c20a)
+
+### 1.2. Install Visual Studio 2022 v17.3 Community Edition
+
+https://visualstudio.microsoft.com/downloads/
+
+![image](https://github.com/user-attachments/assets/653307c3-fe36-43c0-ac29-505d4dead3dd)
 
 ### 1.3. Install and run Docker Desktop for Windows
 
