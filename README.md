@@ -338,11 +338,11 @@ We have to wait for some time until the Kafka and KafkaUI docker images are down
 
 ![image](https://github.com/user-attachments/assets/e1901f73-ad55-48ae-8638-7d2698931a44)
 
-We check in Docker Desktop the images were successfully downloaded
+We check in **Docker Desktop** the **docker images** were successfully downloaded
 
 ![image](https://github.com/user-attachments/assets/505f9352-4af2-48ff-93b8-822ceded6192)
 
-also you can execute this command to see the docker images
+also you can execute this command to see the **docker images**
 
 ```
 docker images
@@ -350,11 +350,11 @@ docker images
 
 ![image](https://github.com/user-attachments/assets/6dc78cae-d7ae-4c4a-9ccf-3c1511e55d8c)
 
-We can also verify in Docker Desktop the containers are running
+We can also verify in **Docker Desktop** the **containers** are running
 
 ![image](https://github.com/user-attachments/assets/4710a141-d484-4dcf-9206-5c57dfe65ca9)
 
-also you can execute this command to see the running docker container
+also you can execute this command to see the **running docker containers**
 
 ```
 docker ps
@@ -393,6 +393,12 @@ We can visit the **kafka Brokers** information and configuration
 We verify the **kafka topics**
 
 ![image](https://github.com/user-attachments/assets/1780f899-c561-4355-9be1-3151b586826c)
+
+We inspect the **messages sent and received** in the topic
+
+![image](https://github.com/user-attachments/assets/e0b1c3c8-cee5-4b8b-9dff-c2534b031d2d)
+
+We can **Produce** a new message clicking on the **Produce Message** button
 
 We also see the **kafka consumers**
 
