@@ -8,6 +8,8 @@ For more information about this post visit the official web site:
 
 https://learn.microsoft.com/en-us/dotnet/aspire/messaging/kafka-integration?tabs=dotnet-cli
 
+https://github.com/dotnet/aspire
+
 ## 1. Prerrequisites
 
 ### 1.1. Install .NET 9
