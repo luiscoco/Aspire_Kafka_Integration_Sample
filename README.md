@@ -16,6 +16,8 @@ https://github.com/dotnet/aspire
 
 ### 1.2. Install Visual Studio 2022 v17.3
 
+### 1.3. Install and run Docker Desktop for Windows
+
 ## 2. Create an Aspire Empty application
 
 Load Nuget Libraries
