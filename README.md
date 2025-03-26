@@ -57,8 +57,6 @@ For a detailed information about **Aspire.Confluent.Kafka** visit the official g
 
 https://github.com/dotnet/aspire/tree/main/src/Components/Aspire.Confluent.Kafka
 
-![image](https://github.com/user-attachments/assets/6fa9f559-c9ce-4657-9336-c3ebdd62e83b)
-
 Add **.NET Aspire Orchestrator Support**
 
 Add **ServiceDefaults** project reference
